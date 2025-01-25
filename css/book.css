@@ -1,0 +1,245 @@
+:root{
+    --darkblue: #24265d;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins";
+    overflow-x: hidden;
+}
+
+.behindheader{
+    height: 80px;
+    width: 100%;
+    z-index: -999;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    background-color: white;
+}
+
+header label, header input{
+    display: none;
+}
+
+header img{
+    height: 60px;
+    margin: 0 20px;
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+    color: var(--darkblue);
+}
+
+header ul li{
+    margin: 0 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: var(--darkblue);
+    font-size: 18px;
+}
+
+header ul li a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+footer{
+    width: 100vw;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--darkblue);
+    color: white;
+}
+
+.social{
+    margin: 20px 0;
+}
+
+.social a{
+    margin: 0 20px;
+}
+
+i{
+    font-size: 24px;
+    color: white;
+}
+
+.container{
+    margin: 70px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container h1{
+    margin: 10px 0 20px 0;
+}
+
+form{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    background-color: #24265d;
+    color: white;
+    padding: 30px 50px;
+    border-radius: 30px;
+}
+
+input[type="text"]{
+    width: 65%;
+    height: 35px;
+    font-size: 24px;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin: 5px 0;
+}
+
+input[type="number"]{
+    width: 20%;
+    height: 35px;
+    font-size: 24px;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin: 5px 0;
+}
+
+.type{
+    margin: 5px 0;
+    font-size: 24px;
+}
+
+.dates{
+    margin: 5px 0;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+input[type="date"]{
+    width: 40%;
+    height: 30px;
+    font-size: 24px;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+button{
+    width: auto;
+    font-size: 24px;
+    border-radius: 20px;
+    margin: 20px 0;
+    padding: 5px 10px;
+    background-color: white;
+    color: #24265d;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 20px 2px rgba(255, 255, 255, 1);
+}
+
+
+@media screen and (max-width: 1100px){
+    header{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 80px 1fr;
+        grid-template-areas: "logo hamburger"
+        "menu menu";
+    }
+
+    header img{
+        grid-area: logo;
+    }
+
+    header label{
+        grid-area: hamburger;
+        display: block;
+        font-size: 30px;
+        justify-self: end;
+        margin: 0 20px;
+    }
+
+    header ul{
+        display: none;
+    }
+
+    header #open-menu:checked + ul{
+        width: 100%;
+        height: calc(100vh - 80px);
+        grid-area: menu;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    header li{
+        display: block;
+        font-size: 40px;
+        margin: 10px 0;
+    }
+
+    footer h2{
+        text-align: center;
+    }
+
+    .dates{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input[type="text"]{
+        width: 100%;
+    }
+
+    input[type="date"]{
+        width: 100%;
+    }
+
+    input[type="number"]{
+        width: 100%;
+    }
+
+    button{
+        width: auto;
+    }
+
+    .container{
+        text-align: center;
+    }
+}

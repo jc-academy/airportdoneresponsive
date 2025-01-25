@@ -1,0 +1,191 @@
+:root{
+    --darkblue: #24265d;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins";
+    overflow-x: hidden;
+}
+
+.behindheader{
+    height: 80px;
+    width: 100%;
+    z-index: -999;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    background-color: white;
+}
+
+header label, header input{
+    display: none;
+}
+
+header img{
+    width: auto;
+    height: 60px;
+    margin: 0 20px;
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+    color: var(--darkblue);
+}
+
+header ul li{
+    margin: 0 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: var(--darkblue);
+    font-size: 18px;
+}
+
+header ul li a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+footer{
+    width: 100vw;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--darkblue);
+    color: white;
+}
+
+.social{
+    margin: 20px 0;
+}
+
+.social a{
+    margin: 0 20px;
+}
+
+i{
+    font-size: 24px;
+    color: white;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero img{
+    width: 100%;
+    z-index: -1;
+}
+
+.hero h1{
+    position: absolute;
+    display: inline-block;
+    font-size: 60px;
+    color: white;
+    text-shadow: 0 0 50px #24265d;
+    margin: 50px 0;
+}
+
+.tabela{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+.services img{
+    width: calc(100vw/3);
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 900px){
+    header{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 80px 1fr;
+        grid-template-areas: "logo hamburger"
+        "menu menu";
+    }
+
+    header img{
+        grid-area: logo;
+    }
+
+    header label{
+        grid-area: hamburger;
+        display: block;
+        font-size: 30px;
+        justify-self: end;
+        margin: 0 20px;
+    }
+
+    header ul{
+        display: none;
+    }
+
+    header #open-menu:checked + ul{
+        width: 100%;
+        height: calc(100vh - 80px);
+        grid-area: menu;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    header li{
+        display: block;
+        font-size: 40px;
+        margin: 10px 0;
+    }
+
+    .hero h1{
+        margin: 4px 0;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .tabela img{
+        width: 90%;
+    }
+
+    .services{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services img{
+        width: 95%;
+    }
+
+    footer h2{
+        text-align: center;
+    }
+}
