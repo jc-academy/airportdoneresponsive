@@ -215,6 +215,15 @@ button:hover{
         text-align: center;
     }
 
+    form{
+        width: 90%;
+        font-size: 16px;
+    }
+
+    input{
+        font-size: 20px;
+    }
+
     .dates{
         display: flex;
         flex-direction: column;
