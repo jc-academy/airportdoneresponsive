@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/book.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
+    <script src="../script/script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,22 +31,32 @@
     <div class="behindheader"></div>
 
     <div class="container">
-        <form action="">
+        <form action="" id="ticketForm">
             <h1>Book Tickets right now!</h1>
-            <input type="text" placeholder="From" required>
-            <input type="text" placeholder="To" required>
-            <input type="number" placeholder="Passangers" required>
+            <div class="autocomplete">
+                <input type="text" id="from" placeholder="From" autocomplete="off" required>
+                <div class="suggestions" id="fromSuggestions"></div>
+            </div>
+
+            <div class="autocomplete">
+                <input type="text" id="to" placeholder="To" autocomplete="off" required>
+                <div class="suggestions" id="toSuggestions"></div>
+            </div>
+
+            <input type="number" placeholder="Passengers" value="1" min="1" required>
             <div class="type">
-                <input type="radio" name="type" id="type" value="return" required checked>
+                <input type="radio" name="type" id="typeReturn" value="return" required checked>
                 <label for="type">Return</label><br>
-                <input type="radio" name="type" id="type" value="oneway" required>
+                <input type="radio" name="type" id="typeOneWay" value="oneway" required>
                 <label for="type">One Way</label>
             </div>
             <div class="dates">
                 <label for="start">Departure</label>
                 <input type="date" name="start" id="start" required>
-                <label for="end">Return</label>
-                <input type="date" name="end" id="end" required>
+                <div class="end" id="endSection">
+                    <label for="endDate">Return</label>
+                    <input type="date" name="end" id="endDate" required>
+                </div>
             </div>
             <button type="submit">Search</button>
         </form>

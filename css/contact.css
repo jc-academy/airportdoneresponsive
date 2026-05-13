@@ -14,7 +14,7 @@ body{
 }
 
 .behindheader{
-    height: 80px;
+    height: 70px;
     width: 100%;
     z-index: -999;
 }
@@ -23,7 +23,7 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -37,8 +37,9 @@ header label, header input{
 }
 
 header img{
+    width: auto;
     height: 60px;
-    margin: 0 20px;
+    margin-left: 20px;
 }
 
 header ul{
@@ -87,14 +88,14 @@ i{
 }
 
 .container{
+    height: calc(100dvh - 70px);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "foto info";
-    margin: 30px 0;
 }
 
 .foto{
-    width: calc(100vw/2);
+    width: 100%;
     grid-area: foto;
     display: flex;
     justify-content: center;
@@ -102,19 +103,18 @@ i{
 }
 
 iframe{
-    padding: 20px;
     border-radius: 20px;
 }
 
 .info{
-    width: calc(vw/2);
+    width: 100%;
     grid-area: info;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 0 30px;
+    padding: 0 20px;
     font-size: 20px;
 }
 
@@ -170,11 +170,13 @@ iframe{
     }
 
     .container{
+        height: auto;
         display: flex;
         flex-direction: column-reverse;
     }
 
     .foto{
+        margin: 20px 0;
         width: 100%;
     }
 }

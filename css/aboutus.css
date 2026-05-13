@@ -14,7 +14,7 @@ body{
 }
 
 .behindheader{
-    height: 80px;
+    height: 70px;
     width: 100%;
     z-index: -999;
 }
@@ -23,7 +23,7 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -37,8 +37,9 @@ header label, header input{
 }
 
 header img{
+    width: auto;
     height: 60px;
-    margin: 0 20px;
+    margin-left: 20px;
 }
 
 header ul{
@@ -62,6 +63,17 @@ header ul li a:hover{
     cursor: pointer;
 }
 
+footer{
+    width: 100vw;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--darkblue);
+    color: white;
+}
+
 .social{
     margin: 20px 0;
 }
@@ -75,18 +87,8 @@ i{
     color: white;
 }
 
-footer{
-    width: 100vw;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: var(--darkblue);
-    color: white;
-}
-
 .container{
+    height: calc(100dvh - 70px);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "foto info";
@@ -168,6 +170,7 @@ footer{
     }
 
     .container{
+        height: auto;
         display: flex;
         flex-direction: column;
         margin: 10px 0;

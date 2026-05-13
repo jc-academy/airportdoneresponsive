@@ -14,7 +14,7 @@ body{
 }
 
 .behindheader{
-    height: 80px;
+    height: 70px;
     width: 100%;
     z-index: -999;
 }
@@ -23,7 +23,7 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -39,7 +39,7 @@ header label, header input{
 header img{
     width: auto;
     height: 60px;
-    margin: 0 20px;
+    margin-left: 20px;
 }
 
 header ul{
@@ -88,6 +88,7 @@ i{
 }
 
 .hero{
+    height: calc(100dvh - 70px);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -101,10 +102,10 @@ i{
 .hero h1{
     position: absolute;
     display: inline-block;
-    font-size: 60px;
+    font-size: 80px;
     color: white;
     text-shadow: 0 0 50px #24265d;
-    margin: 50px 0;
+    margin-bottom: 20px;
 }
 
 .tabela{
@@ -114,22 +115,24 @@ i{
 }
 
 .services{
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
     text-align: center;
     margin: 10px 0;
+    padding: 0 10px;
 }
 
 .services img{
-    width: calc(100vw/3);
-    padding: 0 10px;
+    width: 100%;
 }
 
 @media screen and (max-width: 900px){
     header{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 80px 1fr;
+        grid-template-rows: 70px 1fr;
         grid-template-areas: "logo hamburger"
         "menu menu";
     }
@@ -152,7 +155,7 @@ i{
 
     header #open-menu:checked + ul{
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100dvh - 80px);
         grid-area: menu;
         display: flex;
         justify-content: center;
